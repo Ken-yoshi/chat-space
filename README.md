@@ -35,7 +35,7 @@ Things you may want to cover:
 - belongs_to :body
 - belongs_to :image
 
-## groupテーブル
+## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -56,7 +56,7 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
-## messageテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -68,17 +68,32 @@ Things you may want to cover:
 ### Association
 - has_many :user
 - has_many :group
+- has_many :images_messages
+- has_many :images, through: :images_messages
 
-## imageテーブル
+## imagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |image_id|integer|null: false|
 |image|string||
-|user_id|integer||
-|group_id|integer||
-
+|user_id|integer|null: false|
+|group_id|integer|null: false|
 
 ### Association
 - has_many :user
 - has_many :group
+- has_many :images_messages
+- has_many :messages, through: :images_messages
+
+
+## images_messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|image_id|integer|null: false|
+|message_id|integer|null: false|
+
+### Association
+- belongs_to :image_id
+- belongs_to :message_id
