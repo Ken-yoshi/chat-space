@@ -23,29 +23,7 @@ Things you may want to cover:
 
 * ...
 
-## usersテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|user|string|null:false|
-
-### Association
-- has_many :group
-- belongs_to :body
-- belongs_to :image
-
-## groupsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
-|group|string|null:false|
-
-### Association
-- belongs_to :user
-
-## groups_usersテーブル
+## group_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -56,44 +34,41 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|user_name|string|null:false|
+|mail|string|null:false|
+
+### Association
+- has_many :groups, through:group_users
+- has_many  :messages
+- has_many  :group_users
+
+## groupテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|string|null:false, foreign_key: true|
+
+### Association
+- has_many :users
+- has_many :messages
+
+
 ## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |message_id|integer|null: false|
 |body|text||
-|user_id|integer|null:false|
-|group_id|integer|null: false|
-
-### Association
-- has_many :user
-- has_many :group
-- has_many :images_messages
-- has_many :images, through: :images_messages
-
-## imagesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|image_id|integer|null: false|
 |image|string||
-|user_id|integer|null: false|
-|group_id|integer|null: false|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null:false, foreign_key: true|
 
 ### Association
-- has_many :user
-- has_many :group
-- has_many :images_messages
-- has_many :messages, through: :images_messages
-
-
-## images_messagesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|image_id|integer|null: false|
-|message_id|integer|null: false|
-
-### Association
-- belongs_to :image_id
-- belongs_to :message_id
+- belongs_to :user
+- belongs_to  :group
