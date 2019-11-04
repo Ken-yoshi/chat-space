@@ -34,41 +34,41 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
+
 ## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|user_name|string|null:false|
+|name|string|null:false|
 |mail|string|null:false|
 
 ### Association
-- has_many :groups, through:group_users
-- has_many  :messages
-- has_many  :group_users
+- has_many :messages, through: :group
+- has_many  :groups, through: :group_users
+
 
 ## groupテーブル
 
 |Column|Type|Options|
 |------|----|-------|
+|name|string|null:false|
+|message_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
-|group_id|string|null:false, foreign_key: true|
 
 ### Association
-- has_many :users
-- has_many :messages
+- has_many :users, through: :group_users
+- belongs_to  :group
 
 
 ## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|message_id|integer|null: false|
 |body|text||
 |image|string||
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null:false, foreign_key: true|
 
 ### Association
-- belongs_to :user
-- belongs_to  :group
+- has_many  :users, through: :group
+- has_many :messages
