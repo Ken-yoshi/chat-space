@@ -52,12 +52,10 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null:false|
-|message_id|integer|null: false, foreign_key: true|
-
 
 ### Association
 - has_many :users, through: :group_users
-- belongs_to  :group
+- has_many : messages
 
 
 ## messagesテーブル
@@ -71,4 +69,4 @@ Things you may want to cover:
 
 ### Association
 - has_many  :users, through: :groups
-- has_many :messages
+- belongs_to :group
