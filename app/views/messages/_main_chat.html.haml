@@ -21,12 +21,11 @@
       .create-time
         %p 2019/11/02(Sat) 11:00::50
     
-    
   .form
-    %form.form_box{:action => "/", :method => "post"}
+    %form.form_box{action: "/", method: "post"}
       .input-box
-        %input.text-message{:name => "message", :placeholder => "type a message", :type => "text", :value => ""}
+        %input.text-message{name: "message", placeholder: "type a message", type: "text", value: ""}
         %label{class: "input_message-box"} 
           = icon('far', 'image')
-          %input.input_box-file{type: "file", :name => "message[image]"}
-      %input.send_btn{:type => "submit", :value => "Send"}
+          %input.input_box-file{type: "file", name: "message[image]"}
+      %input.send_btn{type: "submit", value: "Send"}
