@@ -1,0 +1,56 @@
+.side-bar {
+  width: 300px;
+  height: 100vh;
+  color: #fff;
+  background-color: #2f3e51;
+  // font-weight: normal;
+  // flex:auto;
+  &__header {
+    // width: 300px;
+    // height: 100px;
+    background-color: #253141;
+    padding: 0 20px;
+    font-size: 16px;
+    line-height: 100px;
+    display:flex;
+    // position: fixed;
+    font-weight: bold;
+    // z-index: 1;
+    // box-sizing: border-box;
+    &__new-chat--btn {
+      display: inline-block;
+      // float: right;
+      color: #fff;
+      padding-right: 5px;
+      margin: 0 0 0 auto;
+    }
+    &__edit-group--btn {
+      display: inline-block;
+      // float: right;
+      color: #fff;
+    }
+  }
+  &__selects--group {
+    font-size: 15px;
+    // width: 280px;
+    height: calc(100vh - 120px);
+    // display:block;
+    position: absolute;
+    top:120px;
+    left:20px;
+    overflow-y: scroll;
+  }
+  &__group {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    padding-bottom: 5px;
+  }
+  &__last-message {
+    color: #fff;
+    display: block;
+    padding-bottom: 40px;
+    text-decoration: none;
+    font-size: 11px;
+  }
+}
