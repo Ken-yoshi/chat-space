@@ -1,0 +1,21 @@
+.side-bar
+  .side-bar__header
+    .select__user
+      user_name
+    
+    =link_to "#", class: "side-bar__header__new-chat--btn" do
+      = icon('far', 'edit')
+    
+    =link_to "#", class: "side-bar__header__edit-group--btn" do
+      = icon('fas', 'cog')
+  .side-bar__selects--group
+    = link_to "#", class: "side-bar__group" do
+      test 
+    = link_to "#", class: "side-bar__last-message" do
+      まだメッセージがありません 
+    = link_to "#", class: "side-bar__group" do
+      test1 
+    = link_to "#", class: "side-bar__last-message" do
+      まだメッセージがありません 
+   
+    

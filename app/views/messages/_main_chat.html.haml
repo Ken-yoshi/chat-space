@@ -1,0 +1,31 @@
+.main-chat  
+  .header
+    .header__group--name 
+      group-name
+      .header__member--list Member :
+    = link_to "#", class: "header__edit--btn" do
+      Edit
+  .tweet
+    .member__tweet
+      .member__name
+        %p kokoni
+        .message
+          %p 何ができる
+      .create-time
+        %p 2019/11/02(Sat) 11:00::50
+    .member__tweet
+      .member__name
+        %p kokoni
+        .message
+          %p 何ができる
+      .create-time
+        %p 2019/11/02(Sat) 11:00::50
+    
+  .form
+    %form.form_box{action: "/", method: "post"}
+      .input-box
+        %input.text-message{name: "message", placeholder: "type a message", type: "text", value: ""}
+        %label{class: "input_message-box"} 
+          = icon('far', 'image')
+          %input.input_box-file{type: "file", name: "message[image]"}
+      %input.send_btn{type: "submit", value: "Send"}
