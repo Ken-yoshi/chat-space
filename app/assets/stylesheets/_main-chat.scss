@@ -1,7 +1,3 @@
-.wrapper {
-  display:flex;
-}
-
 .main-chat {
   width: calc(100vw - 300px);
   height: 100vh;
@@ -67,47 +63,157 @@
       clear: both;
     }
   }
+
   .form {
     box-sizing: border-box;
-  }
-  .form_box {
-    height: 50px;
-    padding: 20px 40px;
-    background-color: #ddd;
-    display: flex;
-    .input-box {
-      width: 100%;
-      position: relative;
-    }
-    .text-message {
-      width: 100%;
+    .form_box {
       height: 50px;
-      border: none;
-      font-size: 16px;
-      padding-left: 10px;
+      padding: 20px 40px;
+      background-color: #ddd;
+      // display: flex;
+      .input-box {
+        position: relative;
+      }
+      .test {
+        display: flex;
+      }
+      .text__message {
+        width: 100%;
+        height: 50px;
+        border: none;
+        font-size: 16px;
+        padding-left: 10px;
+      }
+      .input_message-box {
+        display: inline-block;
+        font-size: inherit;
+        top: 10px;
+        right: 10px;
+        position: absolute;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      .input_box-file {
+        width: 100%;
+        display: none; 
+      }
+      .send_btn {
+        height: 50px;
+        background-color: #38AEF0;
+        padding: 0 30px;
+        margin-left: 15px;
+        color: #fff;
+        float: right;
+        cursor: pointer;
+      }
     }
-    .input_message-box {
-      display: inline-block;
-      font-size: inherit;
-      top: 10px;
-      right: 10px;
-      position: absolute;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    .input_box-file {
-      width: 100%;
-      display: none; 
-    }
-    .send_btn {
-      height: 50px;
-      background-color: #38AEF0;
-      padding: 0 30px;
-      margin-left: 15px;
-      color: #fff;
-      float: right;
-      cursor: pointer;
     }
   }
-}
+  // .form {
+    //   background-color: #DDDDDD;
+    //   box-sizing: border-box;
+    //   height: 90px;
+    //   padding: 20px 50px 20px 40px;
+    //   &__message {
+    //     border: none;
+    //     float: left;
+    //     height: 50px;
+    //     width: calc(100% - 150px);
+    //   }
+    //   &__mask {
+    //     background-color: $white;
+    //     float: left;
+    //     height: 50px;
+    //     padding-right: 10px;
+    //     &__image {
+    //       font-size: 20px;
+    //       line-height: 50px;
+    //     }
+    //     .hidden {
+    //       display: none;
+    //     }
+    //   }
+    //   &__submit {
+    //     background-color: $light_blue;
+    //     border: none;
+    //     color: $white;
+    //     float: right;
+    //     font-size: 16px;
+    //     height: 50px;
+    //     margin-left: 15px;
+    //     padding: 0 30px;
+
+//模範解答
+// .chat {
+//   width: calc(100% - 300px);
+//   .header {
+//     box-sizing: border-box;
+//     height: 100px;
+//     padding: 0 40px;
+//     .left-header {
+//       float: left;
+//       &__title {
+//         color: #333;
+//         font-size: 20px;
+//         margin-top: 35px;
+//       }
+//       &__members {
+//         // @include flexbox;
+//         color: $light_gray;
+//         font-size: 12px;
+//         margin-top: 15px;
+//         .member {
+//           display: inline-block;
+//           padding-right: 5px;
+//         }
+//       }
+//     }
+//     .right-header {
+//       border: 1px solid $light_blue;
+//       color: $light_blue;
+//       float: right;
+//       height: 40px;
+//       line-height: 40px;
+//       margin-top: 28px;
+//       padding: 0 20px;
+//       &__button {
+//         color: $light_blue;
+//         text-decoration: none;
+//       }
+//     }
+//   }
+
+//   .messages {
+//     background-color: #FAFAFA;
+//     box-sizing: border-box;
+//     padding: 46px 40px 0;
+//     height: calc(100% - 100px - 90px);
+//     .message {
+//       .upper-message {
+//         display: flex;
+//         &__user-name {
+//           color: $black;
+//           font-size: 16px;
+//           font-weight: bold;
+//         }
+//         &__date {
+//           color: $light_gray;
+//           font-size: 12px;
+//           padding-left: 10px;
+//         }
+//       }
+//       .lower-message {
+//         margin-top: 10px;
+//         &__content {
+//           color: $black;
+//           font-size: 14px;
+//           margin-bottom: 40px;
+//         }
+//       }
+//     }
+//   }
+
+//     }
+//   }
+// }
 
