@@ -1,31 +1,30 @@
 .main-chat  
+  = render @messages
   .header
     .header__group--name 
       group-name
-      .header__member--list Member :
-    = link_to "#", class: "header__edit--btn" do
-      Edit
+      .header__member--list 
+        Member :
+    = link_to edit_user_path(current_user)  do
+      .header__edit--btn Edit
   .tweet
+    =render @messages
     .member__tweet
       .member__name
-        %p kokoni
+        -# = message.user.name
         .message
           %p 何ができる
       .create-time
-        %p 2019/11/02(Sat) 11:00::50
-    .member__tweet
-      .member__name
-        %p kokoni
-        .message
-          %p 何ができる
-      .create-time
-        %p 2019/11/02(Sat) 11:00::50
-    
+        -# = message.created_at.strftime("%Y/%m/%d %H:%M")
+
+
   .form
-    %form.form_box{action: "/", method: "post"}
-      .input-box
-        %input.text-message{name: "message", placeholder: "type a message", type: "text", value: ""}
-        %label{class: "input_message-box"} 
-          = icon('far', 'image')
-          %input.input_box-file{type: "file", name: "message[image]"}
-      %input.send_btn{type: "submit", value: "Send"}
+    .form_box
+      =form_for [@group, @message] do |f|
+        .test
+          = f.text_field :content, class: 'text__message', placeholder: 'type a message'
+          .input-box
+            = f.label :image, class: 'input_message-box' do
+              = icon('far', 'image', class: 'icon')
+              = f.file_field :image, class: 'input_box-file'
+          = f.submit 'Send', class: 'send_btn'
