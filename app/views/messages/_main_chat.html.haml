@@ -1,19 +1,20 @@
 .main-chat  
-  = render @messages
   .header
     .header__group--name 
-      group-name
+      = @group.name
       .header__member--list 
         Member :
-    = link_to edit_user_path(current_user)  do
+        - @users.each do |member|
+          = member.name
+    = link_to edit_group_path(@group.id)  do
       .header__edit--btn Edit
   .tweet
     =render @messages
     .member__tweet
       .member__name
-        -# = message.user.name
+        -#  message
         .message
-          %p 何ができる
+          
       .create-time
         -# = message.created_at.strftime("%Y/%m/%d %H:%M")
 
