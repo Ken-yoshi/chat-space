@@ -38,39 +38,47 @@
     box-sizing: border-box;
     overflow-y: scroll;
     
-    .member__tweet {
-      padding-top: 46px;
-      box-sizing: border-box;
-      clear: both;
-    }
-    .member__name {
-      font-size: 16px;
-      font-weight: bold;
-      color: #434A54;
-      margin-bottom: 10px;
-      float:left;
-    }
-    .create-time {
-      font-size: 12px;
-      color: #999;
-      float:left;
-    }
     .message {
-      font-size: 14px;
-      font-weight: normal;
-      color: #434A54;
-      padding-top: 10px;
-      clear: both;
+      width: calc(100vw - 300px);
+      padding: 0 40px 0 0; 
+      background-color: #fafafa;
+      box-sizing: border-box;
+      
+      .upper-message {
+        padding-top: 46px;
+        box-sizing: border-box;
+        clear: both;
+      }
+      .upper-message__user-name {
+        font-size: 16px;
+        font-weight: bold;
+        color: #434A54;
+        margin-bottom: 10px;
+        float:left;
+      }
+      .upper-message__date {
+        font-size: 12px;
+        color: #999;
+        float:left;
+        margin-left: 10px;
+      }
+      .lower-message {
+        font-size: 14px;
+        font-weight: normal;
+        color: #434A54;
+        // padding-top: 10px;
+        clear: both;
+      }
     }
   }
-
+    
+    //footer
   .form {
     box-sizing: border-box;
     .form_box {
       height: 50px;
       padding: 20px 40px;
       background-color: #ddd;
-      // display: flex;
       .input-box {
         position: relative;
       }
@@ -109,41 +117,8 @@
     }
     }
   }
-  // .form {
-    //   background-color: #DDDDDD;
-    //   box-sizing: border-box;
-    //   height: 90px;
-    //   padding: 20px 50px 20px 40px;
-    //   &__message {
-    //     border: none;
-    //     float: left;
-    //     height: 50px;
-    //     width: calc(100% - 150px);
-    //   }
-    //   &__mask {
-    //     background-color: $white;
-    //     float: left;
-    //     height: 50px;
-    //     padding-right: 10px;
-    //     &__image {
-    //       font-size: 20px;
-    //       line-height: 50px;
-    //     }
-    //     .hidden {
-    //       display: none;
-    //     }
-    //   }
-    //   &__submit {
-    //     background-color: $light_blue;
-    //     border: none;
-    //     color: $white;
-    //     float: right;
-    //     font-size: 16px;
-    //     height: 50px;
-    //     margin-left: 15px;
-    //     padding: 0 30px;
-
-//模範解答
+  
+  //模範解答
 // .chat {
 //   width: calc(100% - 300px);
 //   .header {
@@ -210,10 +185,41 @@
 //           margin-bottom: 40px;
 //         }
 //       }
+//      }
 //     }
+//    }
 //   }
-
-//     }
-//   }
-// }
-
+// }     
+// .form {
+  //   background-color: #DDDDDD;
+  //   box-sizing: border-box;
+  //   height: 90px;
+  //   padding: 20px 50px 20px 40px;
+  //   &__message {
+  //     border: none;
+  //     float: left;
+  //     height: 50px;
+  //     width: calc(100% - 150px);
+  //   }
+  //   &__mask {
+  //     background-color: $white;
+  //     float: left;
+  //     height: 50px;
+  //     padding-right: 10px;
+  //     &__image {
+  //       font-size: 20px;
+  //       line-height: 50px;
+  //     }
+  //     .hidden {
+  //       display: none;
+  //     }
+  //   }
+  //   &__submit {
+  //     background-color: $light_blue;
+  //     border: none;
+  //     color: $white;
+  //     float: right;
+  //     font-size: 16px;
+  //     height: 50px;
+  //     margin-left: 15px;
+  //     padding: 0 30px;
