@@ -12,7 +12,7 @@
     =render @messages
     .member__tweet
       .member__name
-        -#  message
+        -#  = message.user_name
         .message
           
       .create-time
@@ -21,7 +21,7 @@
 
   .form
     .form_box
-      =form_for [@group, @message] do |f|
+      =form_for([@group, @message],id: "new_message") do |f|
         .test
           = f.text_field :content, class: 'text__message', placeholder: 'type a message'
           .input-box
