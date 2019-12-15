@@ -38,6 +38,7 @@ $(function() {
           insertHTML += buildHTML(message)
         });
         $(".tweet").append(insertHTML);
+        $('.tweet').animate({ scrollTop: $('.tweet')[0].scrollHeight}, "fast" );
       })
       .fail(function() {
         alert("エラー");
