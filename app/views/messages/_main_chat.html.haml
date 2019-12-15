@@ -10,15 +10,7 @@
       .header__edit--btn Edit
   .tweet
     =render @messages
-    .member__tweet
-      .member__name
-        -#  = message.user_name
-        .message
-          
-      .create-time
-        -# = message.created_at.strftime("%Y/%m/%d %H:%M")
-
-
+    
   .form
     .form_box
       =form_for([@group, @message],id: "new_message") do |f|
